@@ -11,6 +11,6 @@ public class ArtistryClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("Initializing client...");
+        Artistry.LOGGER.info("Initializing client...");
     }
 }

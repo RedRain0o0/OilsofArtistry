@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "artistry",
+  "version": "${version}",
+  "name": "Oils of Artistry",
+  "description": "A mod adding all of Blockixel Artistry's ideas to the game",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/artistry/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.redrain0o0.artistry.client.ArtistryClient"
+    ],
+    "main": [
+      "io.github.redrain0o0.artistry.Artistry"
+    ],
+    "modmenu": [
+      "io.github.redrain0o0.artistry.client.ModMenuSupport"
+    ]
+  },
+  "mixins": [
+    "artistry.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "yet_another_config_lib_v3": ">=3.6.6+1.21.5-fabric"
+  }
+}

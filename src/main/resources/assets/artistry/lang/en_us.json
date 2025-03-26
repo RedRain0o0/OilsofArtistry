@@ -1,5 +1,10 @@
 {
   "artistry.config.narrator": "Oils of Artistry Config",
   "artistry.config.termites": "Termites",
+  "artistry.config.pale_garden": "Pale Garden",
+  "artistry.config.deep_dark": "Deep Dark",
+  "artistry.config.amethyst": "Amethyst",
+  "artistry.config.iceology": "Iceology",
+  "artistry.config.flowering": "Flowering",
   "item.artistry.chisel": "Chisel"
 }

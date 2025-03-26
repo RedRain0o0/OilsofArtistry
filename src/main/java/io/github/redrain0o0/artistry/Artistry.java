@@ -1,5 +1,6 @@
 package io.github.redrain0o0.artistry;
 
+import io.github.redrain0o0.artistry.block.ArtistryBlocks;
 import io.github.redrain0o0.artistry.item.ArtistryItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class Artistry implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing common...");
-        ArtistryItems.registerModItems();
+        ArtistryItems.initialize();
+        ArtistryBlocks.initialize();
     }
 }

@@ -16,26 +16,27 @@ import net.minecraft.world.item.component.BlocksAttacks;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 public class ArtistryItems {
-    public static final Item CHISEL = register("chisel", new Item.Properties().stacksTo(1));
-    public static final Item AMETHYST_SHIELD = register("amethyst_shield", (new Item.Properties()).durability(336).repairable(Items.AMETHYST_SHARD).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
+    public static final Item CHISEL = register("chisel", Item::new, new Item.Properties().durability(432));
+    public static final Item AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(Items.AMETHYST_SHARD).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
 
-    public static Item register(String name, Item.Properties properties) {
+    public static Item register(String name, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, name));
-        Item.Properties props = properties.setId(itemKey);
-
-        return Registry.register(BuiltInRegistries.ITEM, itemKey, new Item(props));
+        Item item = itemFactory.apply(properties.setId(itemKey));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        return item;
     }
 
-    public static void registerModItems() {
+    public static void initialize() {
         Artistry.LOGGER.info("Registering Mod Items...");
-        addItemToGroup(CHISEL, Items.BRUSH, "chisel", CreativeModeTabs.TOOLS_AND_UTILITIES);
-        addItemToGroup(AMETHYST_SHIELD, Items.SHIELD, "amethyst_shield", CreativeModeTabs.COMBAT);
+        addItemToGroup(ArtistryItems.CHISEL, Items.BRUSH, CreativeModeTabs.TOOLS_AND_UTILITIES);
+        addItemToGroup(ArtistryItems.AMETHYST_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
     }
 
-    private static void addItemToGroup(Item item, Item itemAfter, String name, ResourceKey<CreativeModeTab> group) {
+    private static void addItemToGroup(Item item, Item itemAfter, ResourceKey<CreativeModeTab> group) {
         ItemGroupEvents.modifyEntriesEvent(group).register(fabricItemGroupEntries -> fabricItemGroupEntries.addAfter(itemAfter, item));
-        Artistry.LOGGER.info("Registered item {}:{} to group {}", Artistry.MOD_ID, name, group.location());
+        Artistry.LOGGER.info("Registered item {} to group {}", item.toString(), group.location());
     }
 }

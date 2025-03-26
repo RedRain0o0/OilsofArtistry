@@ -10,11 +10,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlocksAttacks;
-import net.minecraft.world.level.block.entity.BannerPatternLayers;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,16 +30,12 @@ public class ArtistryItems {
 
     public static void registerModItems() {
         Artistry.LOGGER.info("Registering Mod Items...");
-        addItemToTools(CHISEL, Items.BRUSH, "chisel");
-        addItemToCombat(AMETHYST_SHIELD, Items.SHIELD, "amethyst_shield");
+        addItemToGroup(CHISEL, Items.BRUSH, "chisel", CreativeModeTabs.TOOLS_AND_UTILITIES);
+        addItemToGroup(AMETHYST_SHIELD, Items.SHIELD, "amethyst_shield", CreativeModeTabs.COMBAT);
     }
 
-    private static void addItemToTools(Item item, Item itemAfter, String name) {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(fabricItemGroupEntries -> fabricItemGroupEntries.addAfter(itemAfter, item));
-        Artistry.LOGGER.info("Registered item {}:{}", Artistry.MOD_ID, name);
-    }
-    private static void addItemToCombat(Item item, Item itemAfter, String name) {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(fabricItemGroupEntries -> fabricItemGroupEntries.addAfter(itemAfter, item));
-        Artistry.LOGGER.info("Registered item {}:{}", Artistry.MOD_ID, name);
+    private static void addItemToGroup(Item item, Item itemAfter, String name, ResourceKey<CreativeModeTab> group) {
+        ItemGroupEvents.modifyEntriesEvent(group).register(fabricItemGroupEntries -> fabricItemGroupEntries.addAfter(itemAfter, item));
+        Artistry.LOGGER.info("Registered item {}:{} to group {}", Artistry.MOD_ID, name, group.location());
     }
 }

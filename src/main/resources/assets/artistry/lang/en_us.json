@@ -6,5 +6,8 @@
   "artistry.config.amethyst": "Amethyst",
   "artistry.config.iceology": "Iceology",
   "artistry.config.flowering": "Flowering",
-  "item.artistry.chisel": "Chisel"
+  "block.artistry.sculk_jaw": "Sculk Jaw",
+  "death.attack.sculk_jaw": "%s was consumed by a Sculk Jaw",
+  "item.artistry.amethyst_chisel": "Amethyst Chisel",
+  "item.artistry.sculk_jaw": "Sculk Jaw"
 }

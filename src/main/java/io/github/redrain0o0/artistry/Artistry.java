@@ -2,6 +2,7 @@ package io.github.redrain0o0.artistry;
 
 import io.github.redrain0o0.artistry.block.ArtistryBlocks;
 import io.github.redrain0o0.artistry.block.entities.ArtistryBlockEntities;
+import io.github.redrain0o0.artistry.entity.ArtistryEntities;
 import io.github.redrain0o0.artistry.item.ArtistryItems;
 import io.github.redrain0o0.artistry.misc.ArtistryDamageTypes;
 import net.fabricmc.api.ModInitializer;
@@ -16,9 +17,10 @@ public class Artistry implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing common...");
-        ArtistryItems.initialize();
         ArtistryBlocks.initialize();
         ArtistryBlockEntities.initialize();
         ArtistryDamageTypes.initialize();
+        ArtistryEntities.initialize();
+        ArtistryItems.initialize();
     }
 }

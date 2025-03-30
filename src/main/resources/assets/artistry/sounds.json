@@ -1,0 +1,12 @@
+{
+  "item.armor.equip_wooden": {
+    "category": "player",
+    "sounds": [
+      "artistry:scrap/whoopee_cushion/fart1",
+      "artistry:scrap/whoopee_cushion/fart2",
+      "artistry:scrap/whoopee_cushion/fart3",
+      "artistry:scrap/whoopee_cushion/fart4"
+    ],
+    "subtitle": "subtitles.artistry.item.armor.equip_wooden"
+  }
+}

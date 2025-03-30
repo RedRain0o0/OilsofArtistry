@@ -8,6 +8,7 @@ import io.github.redrain0o0.artistry.item.ArtistryItemTags;
 import io.github.redrain0o0.artistry.item.ArtistryItems;
 import io.github.redrain0o0.artistry.item.client.renderer.ArtistrySpecialModelRenderers;
 import io.github.redrain0o0.artistry.misc.ArtistryDamageTypes;
+import io.github.redrain0o0.artistry.sounds.ArtistrySoundEvents;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
@@ -28,6 +29,7 @@ public class Artistry implements ModInitializer {
         ArtistryItems.initialize();
         ArtistryItemTags.initialize();
         ArtistryModelLayers.initialize();
+        ArtistrySoundEvents.initialize();
         ArtistrySpecialModelRenderers.initialize();
     }
 

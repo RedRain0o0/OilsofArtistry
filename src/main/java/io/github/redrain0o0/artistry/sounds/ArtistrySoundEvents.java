@@ -19,7 +19,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ArtistrySoundEvents {
-    public static final SoundEvent ALLAY_AMBIENT_WITH_ITEM = register("entity.allay.ambient_with_item");
+    public static final Holder<SoundEvent> ARMOR_EQUIP_WOODEN = registerForHolder("item.armor.equip_wooden");
 
     public static void initialize() {
         Artistry.LOGGER.info("Registering Sound Events...");
@@ -30,7 +30,7 @@ public class ArtistrySoundEvents {
     }
 
     private static SoundEvent register(String string) {
-        return register(ResourceLocation.withDefaultNamespace(string));
+        return register(Artistry.createID(string));
     }
 
     private static SoundEvent register(ResourceLocation resourceLocation) {
@@ -38,7 +38,7 @@ public class ArtistrySoundEvents {
     }
 
     private static Holder.Reference<SoundEvent> registerForHolder(String string) {
-        return registerForHolder(ResourceLocation.withDefaultNamespace(string));
+        return registerForHolder(Artistry.createID(string));
     }
 
     private static Holder.Reference<SoundEvent> registerForHolder(ResourceLocation resourceLocation) {

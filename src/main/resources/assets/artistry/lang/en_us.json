@@ -9,7 +9,10 @@
   "block.artistry.sculk_jaw": "Sculk Jaw",
   "death.attack.sculk_jaw": "%s was consumed by a Sculk Jaw",
   "item.artistry.amethyst_chisel": "Amethyst Chisel",
+  "item.artistry.knawed_sword": "Knawed Sword",
   "item.artistry.sculk_jaw": "Sculk Jaw",
   "item.artistry.splinter_shield": "Splinter Shield",
-  "item.artistry.wood_splinter": "Wood Splinter"
+  "item.artistry.termite_helmet": "Wooden Helmet (Termite)",
+  "item.artistry.wood_splinter": "Wood Splinter",
+  "subtitles.artistry.item.armor.equip_wooden": "Wooden Armor thunks"
 }

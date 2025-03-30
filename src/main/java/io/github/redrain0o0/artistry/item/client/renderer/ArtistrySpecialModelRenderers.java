@@ -15,7 +15,7 @@ public class ArtistrySpecialModelRenderers {
     public static final Codec<SpecialModelRenderer.Unbaked> CODEC;
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Special Renderers...");
+        Artistry.LOGGER.info("Registering Special Renderers...");
     }
 
     public static void bootstrap() {

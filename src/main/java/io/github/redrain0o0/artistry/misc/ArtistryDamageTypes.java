@@ -7,8 +7,9 @@ import net.minecraft.world.damagesource.DamageType;
 
 public class ArtistryDamageTypes {
     public static final ResourceKey<DamageType> SCULK_JAW_BITE = ResourceKey.create(Registries.DAMAGE_TYPE, Artistry.createID("sculk_jaw"));
+    public static final ResourceKey<DamageType> SPLINTER = ResourceKey.create(Registries.DAMAGE_TYPE, Artistry.createID("splinter"));
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Damage Types...");
+        Artistry.LOGGER.info("Registering Damage Types...");
     }
 }

@@ -9,7 +9,7 @@ public class ArtistryItemTags {
     public static final TagKey<Item> AMETHYST = bind("amethyst");
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Item Tags...");
+        Artistry.LOGGER.info("Registering Item Tags...");
     }
 
     private static TagKey<Item> bind(String string) {

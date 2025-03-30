@@ -18,7 +18,7 @@ public class ArtistryModelLayers {
     public static final ModelLayerLocation TERMITE_BABY = register("termite_baby");
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Model Layers...");
+        Artistry.LOGGER.info("Registering Model Layers...");
     }
 
     private static ModelLayerLocation register(String string) {

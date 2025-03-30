@@ -34,7 +34,7 @@ public class ArtistryBlocks {
     }
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Blocks...");
+        Artistry.LOGGER.info("Registering Blocks...");
         addBlockItemToGroup(ArtistryBlocks.SCULK_JAW, Blocks.SCULK_CATALYST, CreativeModeTabs.NATURAL_BLOCKS);
     }
 

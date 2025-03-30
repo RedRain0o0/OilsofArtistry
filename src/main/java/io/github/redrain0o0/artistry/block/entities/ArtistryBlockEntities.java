@@ -19,6 +19,6 @@ public class ArtistryBlockEntities {
     }
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Block Entities...");
+        Artistry.LOGGER.info("Registering Block Entities...");
     }
 }

@@ -23,6 +23,6 @@ public class ArtistryEntities {
     //}
 
     public static void initialize() {
-        Artistry.LOGGER.info("Registering Mod Entities...");
+        Artistry.LOGGER.info("Registering Entities...");
     }
 }

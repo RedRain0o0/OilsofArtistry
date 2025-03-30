@@ -14,10 +14,12 @@ import java.util.stream.Stream;
 public class ArtistryModelLayers {
     private static final String DEFAULT_LAYER = "main";
     private static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
+    public static final ModelLayerLocation SPLINTER_SHIELD = register("splinter_shield");
     public static final ModelLayerLocation TERMITE = register("termite");
     public static final ModelLayerLocation TERMITE_BABY = register("termite_baby");
 
-    public ArtistryModelLayers() {
+    public static void initialize() {
+        Artistry.LOGGER.info("Registering Mod Model Layers...");
     }
 
     private static ModelLayerLocation register(String string) {
@@ -34,7 +36,7 @@ public class ArtistryModelLayers {
     }
 
     private static ModelLayerLocation createLocation(String string, String string2) {
-        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, string), string2);
+        return new ModelLayerLocation(Artistry.createID(string), string2);
     }
 
     public static Stream<ModelLayerLocation> getKnownLocations() {

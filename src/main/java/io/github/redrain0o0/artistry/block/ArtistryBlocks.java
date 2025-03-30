@@ -40,11 +40,11 @@ public class ArtistryBlocks {
     }
 
     private static ResourceKey<Block> keyOfBlock(String name) {
-        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, name));
+        return ResourceKey.create(Registries.BLOCK, Artistry.createID(name));
     }
 
     private static ResourceKey<Item> keyOfItem(String name) {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, Artistry.createID(name));
     }
 
     private static void addBlockItemToGroup(Block block, Block blockAfter, ResourceKey<CreativeModeTab> group) {

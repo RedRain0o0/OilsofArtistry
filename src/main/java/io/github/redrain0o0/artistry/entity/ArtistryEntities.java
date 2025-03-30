@@ -11,9 +11,9 @@ import net.minecraft.world.entity.MobCategory;
 
 public class ArtistryEntities {
     public static final EntityType<TermiteEntity> TERMITE = /*register("termite", TermiteEntity::new, 0.5f, 0.5f);*/Registry.register(BuiltInRegistries.ENTITY_TYPE,
-            ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, "termite")),
+            ResourceKey.create(Registries.ENTITY_TYPE, Artistry.createID("termite")),
             EntityType.Builder.of(TermiteEntity::new, MobCategory.CREATURE)
-                    .sized(0.5f, 0.5f).build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID,"termite")))); //ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, "termite"))));
+                    .sized(0.5f, 0.5f).build(ResourceKey.create(Registries.ENTITY_TYPE, Artistry.createID("termite")))); //ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, "termite"))));
 
     //public static EntityType register(String name, Entity entityClass, Float width, Float height) {
     //    ResourceKey entityKey = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, "termite"));

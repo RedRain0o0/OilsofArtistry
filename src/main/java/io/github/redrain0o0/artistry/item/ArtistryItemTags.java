@@ -2,7 +2,6 @@ package io.github.redrain0o0.artistry.item;
 
 import io.github.redrain0o0.artistry.Artistry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 

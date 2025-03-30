@@ -5,7 +5,6 @@ import io.github.redrain0o0.artistry.Artistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
 
 import java.util.Set;
 import java.util.stream.Stream;

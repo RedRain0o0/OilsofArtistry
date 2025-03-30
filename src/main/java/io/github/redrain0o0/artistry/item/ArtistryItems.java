@@ -20,7 +20,9 @@ import java.util.function.Function;
 
 public class ArtistryItems {
     public static final Item AMETHYST_CHISEL = register("amethyst_chisel", Item::new, new Item.Properties().durability(432));
-    public static final Item AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(Items.AMETHYST_SHARD).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
+    //public static final Item AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(Items.AMETHYST_SHARD).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
+    public static final Item WOOD_SPLINTER = register("wood_splinter", Item::new, new Item.Properties());
+    public static final Item SPLINTER_SHIELD = register("splinter_shield", SplinterShieldItem::new, new Item.Properties().durability(336).repairable(ArtistryItems.WOOD_SPLINTER).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
 
     public static Item register(String name, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, name));
@@ -32,7 +34,9 @@ public class ArtistryItems {
     public static void initialize() {
         Artistry.LOGGER.info("Registering Mod Items...");
         addItemToGroup(ArtistryItems.AMETHYST_CHISEL, Items.BRUSH, CreativeModeTabs.TOOLS_AND_UTILITIES);
-        addItemToGroup(ArtistryItems.AMETHYST_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
+        //addItemToGroup(ArtistryItems.AMETHYST_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
+        addItemToGroup(ArtistryItems.SPLINTER_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
+        addItemToGroup(ArtistryItems.WOOD_SPLINTER, Items.SHIELD, CreativeModeTabs.COMBAT);
     }
 
     private static void addItemToGroup(Item item, Item itemAfter, ResourceKey<CreativeModeTab> group) {

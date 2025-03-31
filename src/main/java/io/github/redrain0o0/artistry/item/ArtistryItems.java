@@ -22,14 +22,25 @@ import java.util.Optional;
 import java.util.function.Function;
 
 public class ArtistryItems {
-    public static final Item AMETHYST_CHISEL = register("amethyst_chisel", Item::new, new Item.Properties().durability(432).repairable(ArtistryItemTags.AMETHYST));
-    //public static final Item AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(ArtistryItemTags.AMETHYST).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
-    public static final Item KNAWED_SWORD = register("knawed_sword", Item::new, new Item.Properties().sword(ToolMaterial.IRON, 3.0F, -2.4F));
-    public static final Item SMALL_PINCHER = register("small_pincher", Item::new, new Item.Properties());
-    public static final Item SPLINTER_SHIELD = register("splinter_shield", SplinterShieldItem::new, new Item.Properties().durability(336).repairable(ItemTags.WOODEN_TOOL_MATERIALS).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
-    public static final Item WOOD_SPLINTER = register("wood_splinter", Item::new, new Item.Properties());
-    public static final Item TERMITE_HELMET = register("termite_helmet", Item::new, new Item.Properties().humanoidArmor(ArtistryArmorMaterials.TERMITE, ArmorType.HELMET));
-    public static final Item WOVEN_PINCHER = register("woven_pincher", Item::new, new Item.Properties());
+    public static final Item AMETHYST_CHISEL;
+    //public static final Item AMETHYST_SHIELD;
+    public static final Item KNAWED_SWORD;
+    public static final Item SMALL_PINCHER;
+    public static final Item SPLINTER_SHIELD;
+    public static final Item SPLINTERS;
+    public static final Item TERMITE_HELMET;
+    public static final Item WOVEN_PINCHER;
+
+    static {
+        AMETHYST_CHISEL = register("amethyst_chisel", Item::new, new Item.Properties().durability(432).repairable(ArtistryItemTags.AMETHYST));
+        //AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(ArtistryItemTags.AMETHYST).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
+        KNAWED_SWORD = register("knawed_sword", Item::new, new Item.Properties().sword(ToolMaterial.IRON, 3.0F, -2.4F));
+        SMALL_PINCHER = register("small_pincher", Item::new, new Item.Properties());
+        SPLINTER_SHIELD = register("splinter_shield", SplinterShieldItem::new, new Item.Properties().durability(336).repairable(ItemTags.WOODEN_TOOL_MATERIALS).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
+        SPLINTERS = register("splinters", SplintersItem::new, new Item.Properties());
+        TERMITE_HELMET = register("termite_helmet", Item::new, new Item.Properties().humanoidArmor(ArtistryArmorMaterials.TERMITE, ArmorType.HELMET));
+        WOVEN_PINCHER = register("woven_pincher", Item::new, new Item.Properties());
+    }
 
     public static Item register(String name, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Artistry.createID(name));
@@ -45,7 +56,7 @@ public class ArtistryItems {
         addItemToGroup(ArtistryItems.KNAWED_SWORD, Items.NETHERITE_SWORD, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.SMALL_PINCHER, Items.RABBIT_HIDE, CreativeModeTabs.INGREDIENTS);
         addItemToGroup(ArtistryItems.SPLINTER_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
-        addItemToGroup(ArtistryItems.WOOD_SPLINTER, Items.ARROW, CreativeModeTabs.COMBAT);
+        addItemToGroup(ArtistryItems.SPLINTERS, Items.ARROW, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.TERMITE_HELMET, Items.TURTLE_HELMET, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.WOVEN_PINCHER, ArtistryItems.SMALL_PINCHER, CreativeModeTabs.INGREDIENTS);
     }

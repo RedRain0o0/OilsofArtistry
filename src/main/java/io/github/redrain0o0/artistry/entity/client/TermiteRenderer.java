@@ -2,6 +2,7 @@ package io.github.redrain0o0.artistry.entity.client;
 
 import io.github.redrain0o0.artistry.Artistry;
 import io.github.redrain0o0.artistry.entity.TermiteEntity;
+import io.github.redrain0o0.artistry.entity.client.model.TermiteModel;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.entity.AgeableMobRenderer;

@@ -1,5 +1,6 @@
-package io.github.redrain0o0.artistry.entity.client;
+package io.github.redrain0o0.artistry.entity.client.model;
 
+import io.github.redrain0o0.artistry.entity.client.TermiteRenderState;
 import net.minecraft.client.model.BabyModelTransform;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;

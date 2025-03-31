@@ -5,6 +5,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.LookControl;
+import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
@@ -20,18 +22,20 @@ public class TermiteEntity extends Animal {
     public TermiteEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.getNavigation().setCanFloat(true);
+        this.moveControl = new MoveControl(this);
+        this.lookControl = new LookControl(this);
     }
 
     @Override
     public boolean isFood(ItemStack itemStack) {
-        return itemStack.is(ArtistryItems.WOOD_SPLINTER);
+        return itemStack.is(ArtistryItems.SPLINTERS);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new BreedGoal(this, 1.15D));
-        this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, Ingredient.of(ArtistryItems.WOOD_SPLINTER), false));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, Ingredient.of(ArtistryItems.SPLINTERS), false));
         this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.10D));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 4.0f));
@@ -44,7 +48,7 @@ public class TermiteEntity extends Animal {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.ARMOR, 2)
                 .add(Attributes.MAX_HEALTH, 10)
                 .add(Attributes.MOVEMENT_SPEED, 0.30000001192092896);

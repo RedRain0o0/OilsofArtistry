@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 public class ArtistryModelLayers {
     private static final String DEFAULT_LAYER = "main";
     private static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
+    public static final ModelLayerLocation SPLINTER = register("splinter");
     public static final ModelLayerLocation SPLINTER_SHIELD = register("splinter_shield");
     public static final ModelLayerLocation TERMITE = register("termite");
     public static final ModelLayerLocation TERMITE_BABY = register("termite_baby");

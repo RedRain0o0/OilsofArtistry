@@ -22,7 +22,7 @@ public class ArtistryModelLayers {
         Artistry.LOGGER.info("Registering Model Layers...");
     }
 
-    private static ModelLayerLocation register(String string) {
+    public static ModelLayerLocation register(String string) {
         return register(string, "main");
     }
 

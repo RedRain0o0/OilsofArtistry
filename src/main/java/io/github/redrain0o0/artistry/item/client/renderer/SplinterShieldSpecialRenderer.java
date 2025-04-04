@@ -8,7 +8,6 @@ import io.github.redrain0o0.artistry.item.client.model.SplinterShieldModel;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BannerRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -25,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
+@Environment(EnvType.CLIENT)
 public class SplinterShieldSpecialRenderer implements SpecialModelRenderer<DataComponentMap> {
     private final SplinterShieldModel model;
 

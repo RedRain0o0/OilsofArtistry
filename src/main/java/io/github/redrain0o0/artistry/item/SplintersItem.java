@@ -23,8 +23,10 @@ public class SplintersItem extends Item {
         if (level.isClientSide) {
             return InteractionResult.PASS;
         } else {
-            if (itemStack2.is(ArtistryItems.SPLINTER_SHIELD)) {
+            if (itemStack2.is(ArtistryItems.SPLINTER_SHIELD) && itemStack2.get(ArtistryComponents.SPLINTER_COUNT) <= 16 - 1) {
                 itemStack.shrink(1);
+                int splinterCount = itemStack2.getOrDefault(ArtistryComponents.SPLINTER_COUNT, 0);
+                itemStack2.set(ArtistryComponents.SPLINTER_COUNT, splinterCount+1);
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));

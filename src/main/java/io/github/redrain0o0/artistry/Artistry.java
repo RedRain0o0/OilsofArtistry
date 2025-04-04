@@ -4,9 +4,10 @@ import io.github.redrain0o0.artistry.block.ArtistryBlocks;
 import io.github.redrain0o0.artistry.block.entities.ArtistryBlockEntities;
 import io.github.redrain0o0.artistry.entity.ArtistryEntities;
 import io.github.redrain0o0.artistry.entity.client.ArtistryModelLayers;
+import io.github.redrain0o0.artistry.item.ArtistryComponents;
 import io.github.redrain0o0.artistry.item.ArtistryItemTags;
 import io.github.redrain0o0.artistry.item.ArtistryItems;
-import io.github.redrain0o0.artistry.item.client.renderer.ArtistrySpecialModelRenderers;
+import io.github.redrain0o0.artistry.misc.ArtistryConfig;
 import io.github.redrain0o0.artistry.misc.ArtistryDamageTypes;
 import io.github.redrain0o0.artistry.sounds.ArtistrySoundEvents;
 import net.fabricmc.api.ModInitializer;
@@ -22,15 +23,16 @@ public class Artistry implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing common...");
+        ArtistryConfig.HANDLER.load();
         ArtistryBlocks.initialize();
         ArtistryBlockEntities.initialize();
+        ArtistryComponents.initialize();
         ArtistryDamageTypes.initialize();
         ArtistryEntities.initialize();
         ArtistryItems.initialize();
         ArtistryItemTags.initialize();
         ArtistryModelLayers.initialize();
         ArtistrySoundEvents.initialize();
-        ArtistrySpecialModelRenderers.initialize();
     }
 
     public static ResourceLocation createID(String name) {

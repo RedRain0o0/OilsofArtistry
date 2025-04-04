@@ -1,6 +1,8 @@
 package io.github.redrain0o0.artistry.item.client.model;
 
+import io.github.redrain0o0.artistry.Artistry;
 import net.minecraft.client.model.Model;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -10,6 +12,7 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.RenderType;
 
 public class SplinterShieldModel extends Model {
+    public static final ModelLayerLocation SPLINTER_SHIELD = new ModelLayerLocation(Artistry.createID("splinter_shield"), "main");
     private static final String PLATE = "plate";
     private static final String HANDLE = "handle";
     private static final int SHIELD_WIDTH = 10;

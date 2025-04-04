@@ -21,6 +21,12 @@ public class ArtistryBlocks {
             BlockBehaviour.Properties.of().sound(SoundType.SCULK).noOcclusion(),
             true
     );
+    public static final Block DISPLAY_CASE = register(
+            "display_case",
+            DisplayCase::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion(),
+            true
+    );
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
@@ -36,6 +42,7 @@ public class ArtistryBlocks {
     public static void initialize() {
         Artistry.LOGGER.info("Registering Blocks...");
         addBlockItemToGroup(ArtistryBlocks.SCULK_JAW, Blocks.SCULK_CATALYST, CreativeModeTabs.NATURAL_BLOCKS);
+        addBlockItemToGroup(ArtistryBlocks.DISPLAY_CASE, Blocks.BELL, CreativeModeTabs.FUNCTIONAL_BLOCKS);
     }
 
     private static ResourceKey<Block> keyOfBlock(String name) {

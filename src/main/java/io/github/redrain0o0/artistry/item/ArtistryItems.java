@@ -2,6 +2,7 @@ package io.github.redrain0o0.artistry.item;
 
 import io.github.redrain0o0.artistry.Artistry;
 import io.github.redrain0o0.artistry.item.equipment.ArtistryArmorMaterials;
+import io.github.redrain0o0.artistry.item.equipment.ArtistryToolMaterial;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
@@ -24,8 +25,11 @@ import java.util.function.Function;
 public class ArtistryItems {
     public static final Item AMETHYST_CHISEL;
     //public static final Item AMETHYST_SHIELD;
+    public static final Item ARCHEOLOGY_GLOVE;
+    public static final Item ARCHEOLOGY_GLOVE_TREASURE;
     public static final Item KNAWED_SWORD;
     public static final Item OXIWIND_BOLT;
+    public static final Item PINCER_SWORD;
     public static final Item SCULK_LATCH;
     public static final Item SMALL_PINCER;
     public static final Item SPLINTER_SHIELD;
@@ -36,8 +40,11 @@ public class ArtistryItems {
     static {
         AMETHYST_CHISEL = register("amethyst_chisel", Item::new, new Item.Properties().durability(432).repairable(ArtistryItemTags.AMETHYST));
         //AMETHYST_SHIELD = register("amethyst_shield", ShieldItem::new, new Item.Properties().durability(336).repairable(ArtistryItemTags.AMETHYST).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
-        KNAWED_SWORD = register("knawed_sword", Item::new, new Item.Properties().sword(ToolMaterial.IRON, 3.0F, -2.4F));
+        ARCHEOLOGY_GLOVE = register("archeology_glove", Item::new, new Item.Properties());
+        ARCHEOLOGY_GLOVE_TREASURE = register("archeology_glove_treasure", Item::new, new Item.Properties());
+        KNAWED_SWORD = register("knawed_sword", Item::new, new Item.Properties().sword(ArtistryToolMaterial.KNAWED, 3.0F, -2.4F));
         OXIWIND_BOLT = register("oxiwind_bolt", Item::new, new Item.Properties());
+        PINCER_SWORD = register("pincer_sword", Item::new, new Item.Properties().sword(ArtistryToolMaterial.PINCER, 3.0F, -2.4F));
         SCULK_LATCH = register("sculk_latch", Item::new, new Item.Properties());
         SMALL_PINCER = register("small_pincer", Item::new, new Item.Properties());
         SPLINTER_SHIELD = register("splinter_shield", SplinterShieldItem::new, new Item.Properties().component(ArtistryComponents.SPLINTER_COUNT, 0).durability(336).repairable(ItemTags.WOODEN_TOOL_MATERIALS).equippableUnswappable(EquipmentSlot.OFFHAND).component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.25F, 1.0F,List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)), new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F), Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SHIELD_BLOCK), Optional.of(SoundEvents.SHIELD_BREAK))).component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK));
@@ -59,6 +66,7 @@ public class ArtistryItems {
         //addItemToGroup(ArtistryItems.AMETHYST_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.KNAWED_SWORD, Items.NETHERITE_SWORD, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.OXIWIND_BOLT, Items.HEAVY_CORE, CreativeModeTabs.INGREDIENTS);
+        addItemToGroup(ArtistryItems.PINCER_SWORD, ArtistryItems.KNAWED_SWORD, CreativeModeTabs.COMBAT);
         addItemToGroup(ArtistryItems.SCULK_LATCH, Items.ECHO_SHARD, CreativeModeTabs.INGREDIENTS);
         addItemToGroup(ArtistryItems.SMALL_PINCER, Items.RABBIT_HIDE, CreativeModeTabs.INGREDIENTS);
         addItemToGroup(ArtistryItems.SPLINTER_SHIELD, Items.SHIELD, CreativeModeTabs.COMBAT);

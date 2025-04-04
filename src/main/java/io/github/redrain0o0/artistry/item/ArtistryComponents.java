@@ -13,6 +13,12 @@ public class ArtistryComponents {
             DataComponentType.<Integer>builder().persistent(Codec.INT).build()
     );
 
+    public static final DataComponentType<Boolean> IS_SHARPENED = Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            Artistry.createID("is_sharpened"),
+            DataComponentType.<Boolean>builder().persistent(Codec.BOOL).build()
+    );
+
 
 
     // Glove Codecs

@@ -7,6 +7,8 @@ import net.minecraft.world.item.Item;
 
 public class ArtistryItemTags {
     public static final TagKey<Item> AMETHYST = bind("amethyst");
+    public static final TagKey<Item> KNAWED_TOOL_MATERIALS = bind("knawed_tool_materials");
+    public static final TagKey<Item> PINCER_TOOL_MATERIALS = bind("pincer_tool_materials");
 
     public static void initialize() {
         Artistry.LOGGER.info("Registering Item Tags...");

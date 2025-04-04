@@ -1,0 +1,20 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "artistry:block/display_case_closed"
+      },
+      "when": {
+        "activated": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "artistry:block/display_case_open"
+      },
+      "when": {
+        "activated": "false"
+      }
+    }
+  ]
+}

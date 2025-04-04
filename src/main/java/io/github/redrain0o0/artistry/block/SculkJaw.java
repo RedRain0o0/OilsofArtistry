@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -21,6 +22,10 @@ public class SculkJaw extends BaseEntityBlock {
         super(properties);
     }
 
+    private static final VoxelShape SHAPE = Shapes.or(Block.box(0d, 0d, 0d, 16d, 4d, 16d), Block.box(0d, 4d, 0d, 16d, 16d, 1d)/*, Block.box(0d, 4d, 16d, 16d, 16d, 1d)*/);
+        //Shapes.or(Block.column(16.0, 8.0, 16.0), Block.column(4.0, 0.0, 8.0));
+
+
     public void stepOn(Level level, BlockPos blockPos, BlockState blockState, Entity entity) {
         if (entity instanceof LivingEntity) {
             entity.hurt(level.damageSources().source(ArtistryDamageTypes.SCULK_JAW_BITE), 1.0F);
@@ -31,7 +36,7 @@ public class SculkJaw extends BaseEntityBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter view, BlockPos pos, CollisionContext context) {
-        return Shapes.create(0f, 0f, 0f, 1f, 0.25f, 1.0f);
+        return SHAPE; //Shapes.create(0f, 0f, 0f, 1f, 0.25f, 1.0f);
     }
 
     @Override

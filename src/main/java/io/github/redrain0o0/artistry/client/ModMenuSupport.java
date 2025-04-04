@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 public class ModMenuSupport implements ModMenuApi {
 
-    private Boolean myBooleanOption = true;
+    public Boolean myBooleanOption = true;
 
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
@@ -21,7 +21,7 @@ public class ModMenuSupport implements ModMenuApi {
                                 .name(Component.translatable("Name of the group"))
                                 .description(OptionDescription.of(Component.translatable("This text will appear when you hover over the name or focus on the collapse button with Tab.")))
                                 .option(Option.<Boolean>createBuilder()
-                                        .name(Component.translatable("Boolean Option"))
+                                        .name(Component.translatable("artistry.config.termites.splinter_shield_splinter_count"))
                                         .description(OptionDescription.of(Component.translatable("This text will appear as a tooltip when you hover over the option.")))
                                         .binding(true, () -> this.myBooleanOption, newVal -> this.myBooleanOption = newVal)
                                         .controller(TickBoxControllerBuilder::create)

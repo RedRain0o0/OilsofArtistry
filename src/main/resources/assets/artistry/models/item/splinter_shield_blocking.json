@@ -5,6 +5,7 @@
 		"0": "artistry:entity/splinter_shield",
 		"particle": "artistry:entity/splinter_shield"
 	},
+	"gui_light": "front",
 	"elements": [
 		{
 			"name": "base",

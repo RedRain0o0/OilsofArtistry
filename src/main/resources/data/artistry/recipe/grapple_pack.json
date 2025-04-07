@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "t": "minecraft:tripwire_hook",
+    "r": "minecraft:redstone",
+    "l": "minecraft:lead",
+    "C": "minecraft:copper_block",
+    "L": "minecraft:lightning_rod"
+  },
+  "pattern": [
+    "CtC",
+    "CrC",
+    "LlL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "artistry:grapple_pack"
+  }
+}

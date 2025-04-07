@@ -7,15 +7,22 @@
   "artistry.config.iceology": "Iceology",
   "artistry.config.flowering": "Flowering",
   "artistry.config.termites.splinter_shield_splinter_count": "Max Splinters loadable into a Splinter Shield",
+
+  "advancements.artistry.adventure.use_small_pincer.title": "Sharpest Tool in the Shed",
+  "advancements.artistry.adventure.use_small_pincer.description": "Use a Small Pincer to sharpen a Pincer Sword",
+
   "block.artistry.display_case": "Display Case",
   "block.artistry.sculk_jaw": "Sculk Jaw",
+
   "death.attack.sculk_jaw": "%s was consumed by a Sculk Jaw",
+
   "item.artistry.amethyst_chisel": "Amethyst Chisel",
   "item.artistry.archeology_glove": "Archeology Glove",
   "item.artistry.archeology_glove_treasure": "Archeology Glove (Treasure)",
   "item.artistry.creaking_helmet": "Wooden Helmet (Creaking)",
   "item.artistry.display_case": "Display Case",
   "item.artistry.knawed_sword": "Knawed Sword",
+  "item.artistry.ounter_pottery_sherd": "Ounter Pottery Sherd",
   "item.artistry.oxiwind_bolt": "Oxiwind Bolt",
   "item.artistry.pincer_sword": "Pincer Sword",
   "item.artistry.sculk_jaw": "Sculk Jaw",
@@ -28,5 +35,6 @@
   "item.artistry.termite_helmet": "Wooden Helmet (Termite)",
   "item.artistry.splinters": "Splinters",
   "item.artistry.woven_pincer": "Woven Pincer",
+
   "subtitles.artistry.item.armor.equip_wooden": "Wooden Armor thunks"
 }

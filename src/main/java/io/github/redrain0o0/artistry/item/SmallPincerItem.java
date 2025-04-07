@@ -8,8 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SplintersItem extends Item {
-    public SplintersItem(Item.Properties properties) {
+public class SmallPincerItem extends Item {
+    public SmallPincerItem(Item.Properties properties) {
         super(properties);
     }
 
@@ -20,13 +20,13 @@ public class SplintersItem extends Item {
             case MAIN_HAND -> InteractionHand.OFF_HAND;
         };
         ItemStack itemStack2 = player.getItemInHand(oppositeHand);
+
         if (level.isClientSide) {
             return InteractionResult.PASS;
         } else {
-            if (itemStack2.is(ArtistryItems.SPLINTER_SHIELD) && itemStack2.getOrDefault(ArtistryComponents.SPLINTER_COUNT, 0) <= 16 - 1) {
+            if (itemStack2.is(ArtistryItems.PINCER_SWORD) && !itemStack2.getOrDefault(ArtistryComponents.IS_SHARPENED, false)) {
                 itemStack.shrink(1);
-                int splinterCount = itemStack2.getOrDefault(ArtistryComponents.SPLINTER_COUNT, 0);
-                itemStack2.set(ArtistryComponents.SPLINTER_COUNT, splinterCount + 1);
+                itemStack2.set(ArtistryComponents.IS_SHARPENED, true);
                 player.awardStat(Stats.ITEM_USED.get(this));
             }
 

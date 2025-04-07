@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "use_small_pincer": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "artistry:small_pincer"
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.artistry.adventure.use_small_pincer.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "artistry:pincer_sword"
+    },
+    "title": {
+      "translate": "advancements.artistry.adventure.use_small_pincer.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_small_pincer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

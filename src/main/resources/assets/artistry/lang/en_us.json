@@ -13,6 +13,9 @@
 
   "block.artistry.display_case": "Display Case",
   "block.artistry.sculk_jaw": "Sculk Jaw",
+  "block.artistry.termite_nest": "Termite Nest",
+
+  "container.artistry.termite_nest": "Termite Nest",
 
   "death.attack.sculk_jaw": "%s was consumed by a Sculk Jaw",
 
@@ -33,8 +36,11 @@
   "item.artistry.splinter_shield.splinters": "%s splinters loaded.",
   "item.artistry.stick_bug_helmet": "Wooden Helmet (Stick Bug)",
   "item.artistry.termite_helmet": "Wooden Helmet (Termite)",
+  "item.artistry.termite_nest": "Termite Nest",
   "item.artistry.splinters": "Splinters",
   "item.artistry.woven_pincer": "Woven Pincer",
 
-  "subtitles.artistry.item.armor.equip_wooden": "Wooden Armor thunks"
+  "subtitles.artistry.item.armor.equip_wooden": "Wooden Armor thunks",
+
+  "tag.item.artistry.amethyst": "Amethyst"
 }

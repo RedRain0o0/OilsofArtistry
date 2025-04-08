@@ -23,6 +23,12 @@ public class ArtistryBlocks {
             BlockBehaviour.Properties.of().sound(SoundType.SCULK).noOcclusion(),
             true
     );
+    public static final Block TERMITE_NEST = register(
+            "termite_nest",
+            TermiteNest::new,
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
     public static final Block DISPLAY_CASE = register(
             "display_case",
             DisplayCase::new,
@@ -76,6 +82,7 @@ public class ArtistryBlocks {
     public static void initialize() {
         Artistry.LOGGER.info("Registering Blocks...");
         addBlockItemToGroup(ArtistryBlocks.SCULK_JAW, Blocks.SCULK_CATALYST, CreativeModeTabs.NATURAL_BLOCKS);
+        addBlockItemToGroup(ArtistryBlocks.TERMITE_NEST, Blocks.BEEHIVE, CreativeModeTabs.FUNCTIONAL_BLOCKS);
         addBlockItemToGroup(ArtistryBlocks.DISPLAY_CASE, Blocks.BELL, CreativeModeTabs.FUNCTIONAL_BLOCKS);
         addBlockItemToGroup(ArtistryBlocks.KNAWED_PLANKS, Blocks.WARPED_BUTTON, CreativeModeTabs.BUILDING_BLOCKS);
         addBlockItemToGroup(ArtistryBlocks.KNAWED_STAIRS, ArtistryBlocks.KNAWED_PLANKS, CreativeModeTabs.BUILDING_BLOCKS);

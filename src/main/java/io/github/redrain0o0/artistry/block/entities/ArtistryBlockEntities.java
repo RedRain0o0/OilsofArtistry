@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class ArtistryBlockEntities {
     public static final BlockEntityType<SculkJawEntity> SCULK_JAW_ENTITY = register("sculk_jaw", SculkJawEntity::new, ArtistryBlocks.SCULK_JAW);
+    public static final BlockEntityType<TermiteNestEntity> TERMITE_NEST_ENTITY = register("termite_nest", TermiteNestEntity::new, ArtistryBlocks.TERMITE_NEST);
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory, Block... blocks) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(Artistry.MOD_ID, name);

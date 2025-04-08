@@ -1,8 +1,6 @@
 package io.github.redrain0o0.artistry.block.entities;
 
-import io.github.redrain0o0.artistry.Artistry;
 import io.github.redrain0o0.artistry.block.TermiteNest;
-import io.github.redrain0o0.artistry.client.screen.TermiteNestMenu;
 import net.minecraft.core.*;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
@@ -12,7 +10,6 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -21,23 +18,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BarrelBlock;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
-import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
-import java.util.Map;
 
 public class TermiteNestEntity extends BlockEntity implements Container, MenuProvider {
     private LockCode lockKey;
@@ -95,7 +85,7 @@ public class TermiteNestEntity extends BlockEntity implements Container, MenuPro
                 switch (i) {
                     case 0: TermiteNestEntity.this.progress = j;
                     case 1: TermiteNestEntity.this.maxProgress = j;
-                };
+                }
             }
 
             @Override
@@ -229,7 +219,7 @@ public class TermiteNestEntity extends BlockEntity implements Container, MenuPro
     }
 
     public static void serverTick(Level level, BlockPos blockPos, BlockState blockState, TermiteNestEntity termiteNestEntity) {
-        Artistry.LOGGER.info("Ticking Termite Nest at {}, {}, {} with block state {}", blockPos.getX(), blockPos.getY(), blockPos.getZ(), blockState.toString());
+        //Artistry.LOGGER.info("Ticking Termite Nest at {}, {}, {} with block state {}", blockPos.getX(), blockPos.getY(), blockPos.getZ(), blockState.toString());
     }
 
     protected void applyImplicitComponents(DataComponentGetter dataComponentGetter) {

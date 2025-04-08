@@ -1,7 +1,20 @@
 {
-  "variants": {
-    "": {
-      "model": "artistry:block/termite_nest"
+  "multipart": [
+    {
+      "apply": {
+        "model": "artistry:block/termite_nest_closed"
+      },
+      "when": {
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "artistry:block/termite_nest_open"
+      },
+      "when": {
+        "open": "true"
+      }
     }
-  }
+  ]
 }

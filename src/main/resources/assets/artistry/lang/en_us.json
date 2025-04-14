@@ -22,8 +22,12 @@
   "item.artistry.amethyst_chisel": "Amethyst Chisel",
   "item.artistry.archeology_glove": "Archeology Glove",
   "item.artistry.archeology_glove_treasure": "Archeology Glove (Treasure)",
+  "item.artistry.cactus_fruit": "Cactus Fruit",
+  "item.artistry.coral_crab_claw": "Coral Crab Claw",
   "item.artistry.creaking_helmet": "Wooden Helmet (Creaking)",
   "item.artistry.display_case": "Display Case",
+  "item.artistry.frozen_brittle_chunk": "Frozen Brittle Chunk",
+  "item.artistry.grapple_pack": "Copper Grapple Pack",
   "item.artistry.knawed_sword": "Knawed Sword",
   "item.artistry.ounter_pottery_sherd": "Ounter Pottery Sherd",
   "item.artistry.oxiwind_bolt": "Oxiwind Bolt",
@@ -42,5 +46,6 @@
 
   "subtitles.artistry.item.armor.equip_wooden": "Wooden Armor thunks",
 
+  "tag.item.artistry.shields": "Shields",
   "tag.item.artistry.amethyst": "Amethyst"
 }
